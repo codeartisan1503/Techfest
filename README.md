@@ -19,13 +19,5 @@ A futuristic and responsive landing page inspired by cybernetic technology and A
 * Responsive Design Techniques
 * CSS Animations & Effects
 
-## Demo
-
-A short demonstration video showcasing the landing page functionality and responsiveness is provided through a Google Drive link.
-
-## Author
-
-Harshita Chauhan
-
 
 
