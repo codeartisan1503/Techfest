@@ -1,0 +1,6 @@
+{
+  "name": "Cyborg Landing Page",
+  "description": "A premium, responsive, cyberpunk-inspired cyborg-themed landing page with neon glowing accents, glassmorphic UI components, and scroll-triggered animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

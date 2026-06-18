@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  
+  --color-cyber-bg: #020408;
+  --color-cyber-dark: #050a14;
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #9d00ff;
+  --color-neon-cyan: #00f3ff;
+  --color-neon-magenta: #ff0055;
+  --color-cyber-card: rgba(255, 255, 255, 0.05);
+}
+
+/* Custom glowing & scanline effects inside global css */
+@utility neon-glow-blue {
+  text-shadow: 0 0 5px rgba(0, 243, 255, 0.5), 0 0 15px rgba(0, 243, 255, 0.7);
+}
+
+@utility neon-glow-purple {
+  text-shadow: 0 0 5px rgba(157, 0, 255, 0.5), 0 0 15px rgba(157, 0, 255, 0.7);
+}
+
+@utility neon-border-blue {
+  box-shadow: 0 0 8px rgba(0, 243, 255, 0.3), inset 0 0 8px rgba(0, 243, 255, 0.2);
+}
+
+@utility neon-border-purple {
+  box-shadow: 0 0 8px rgba(157, 0, 255, 0.3), inset 0 0 8px rgba(157, 0, 255, 0.2);
+}
+
+/* cyber grid scanlines etc */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(157, 0, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 0, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cyber-grid-blue {
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.radial-dots {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 10, 36, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.03), 
+    rgba(0, 255, 0, 0.01), 
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 3px 100%;
+}
+
+@keyframes scanline-anim {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.moving-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to bottom, transparent, var(--color-neon-blue), transparent);
+  opacity: 0.4;
+  animation: scanline-anim 8s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #020408;
+  color: #f3f4f6;
+  font-family: var(--font-poppins);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar designs */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020408;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(157, 0, 255, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.6);
+}
